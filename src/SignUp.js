@@ -35,7 +35,7 @@ const SignUp = ({history}) => {
             <h1>Sign up</h1>
             <form onSubmit={handleSignUp}>
                 <label>
-                Name
+                Email Address
                 </label> <br/>
                 <input className="emailInput" name="email" type="email" /> <br/>
                 <label>
@@ -48,7 +48,7 @@ const SignUp = ({history}) => {
                 <select className="emailInput" name="team" id="team">
                     <option value="red">Red</option>
                     <option value="blue">Blue</option>
-                    <option value="yellow">Yellow</option>
+                    <option value="yellow">Green</option>
                     <option value="white">White</option>
                 </select> <br/>
                 <label>
