@@ -53,6 +53,16 @@ const Results = () => {
                     return <AdminUpcoming slot={res.Slot} event={res.eventname} team1={res.Team1} team2={res.Team2}/>
                 })
             }
+            <div className="footer">
+                    <div>
+                        <h3>Coordinators:</h3>
+                        <h5>Name 1</h5>
+                    </div>
+                    <div>
+                        <h3>Contacts:</h3>
+                        <h5>403920</h5>
+                    </div>
+            </div>
         </div>
     )
 }

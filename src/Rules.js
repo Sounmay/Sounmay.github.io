@@ -17,6 +17,16 @@ const Rules = () => {
                     <span>Search and Select the Event</span>
                 </div>
             </div>
+            <div className="footer">
+                    <div>
+                        <h3>Coordinators:</h3>
+                        <h5>Name 1</h5>
+                    </div>
+                    <div>
+                        <h3>Contacts:</h3>
+                        <h5>403920</h5>
+                    </div>
+            </div>
         </div>
     )
 }

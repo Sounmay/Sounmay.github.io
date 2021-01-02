@@ -40,8 +40,8 @@ const Home = () => {
             </div>
 
             <div className="calendar">
-                    <h5>Upcoming events</h5>
-                    <h5>Calendar</h5>
+                    <h4>Upcoming events</h4>
+                    <h4>Calendar</h4>
             </div>
             <hr/>
 

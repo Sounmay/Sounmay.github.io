@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from './Auth';
+import AdminUpcoming from './AdminUpcoming';
 import app from './base'
 import NavigationBar from './NavigationBar';
 import "./Schedule.css"
@@ -9,6 +10,27 @@ const Schedule = () => {
     let date = new Date().getDate();
     let year = new Date().getFullYear();
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+    let today = new Date().getTime();
+    const [upcomingEvents, setUpcomingEvents] = useState([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await app.firestore().collection('events').orderBy("date").get();
+                data.docs.forEach((res) => {
+                    if(today.valueOf() < res.data().date.toDate().valueOf()) {
+                        setUpcomingEvents(oldEvents => [...oldEvents, res.data()]);
+                    }
+                });
+            } catch (error) {
+                alert(error);
+            }
+        }
+        fetchData();
+    }, []);
+
+
     return (
         <div>
             <NavigationBar />
@@ -59,17 +81,15 @@ const Schedule = () => {
             </div>
             
             <br/>
-            <div class="footer">
-                <table>
-                    <tr>
-                        <th><h3>Coordinators:</h3></th>
-                        <th><h3>Contacts:</h3></th>
-                    </tr>
-                    <tr>
-                        <th><h4>Name 1</h4></th>
-                        <th><h3>403920</h3></th>
-                    </tr>
-                </table>
+            <div className="footer">
+                    <div>
+                        <h3>Coordinators:</h3>
+                        <h5>Name 1</h5>
+                    </div>
+                    <div>
+                        <h3>Contacts:</h3>
+                        <h5>403920</h5>
+                    </div>
             </div>
         </div>
     )
