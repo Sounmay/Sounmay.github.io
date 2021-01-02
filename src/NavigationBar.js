@@ -34,9 +34,9 @@ const NavigationBar = () => {
                     <div className="teamsOption"><Link to="/teams">TEAMS</Link></div>
                     <div className="rulesOption"><Link to="/rules">RULES</Link></div>
                     <div className="newsOption"><Link to="/news">NEWS</Link></div>
-                    <div className="votingOption"><Link to="/">VOTING</Link></div>
+                    {/* <div className="votingOption"><Link to="/">VOTING</Link></div> */}
                     <div className="photosOption"><Link to="/">PHOTOS</Link></div>
-                    <div className="discussionOption"><Link to="/">DISCUSSION FORUM</Link></div>
+                    {/* <div className="discussionOption"><Link to="/">DISCUSSION FORUM</Link></div> */}
                 </div>
             </div>
         )
